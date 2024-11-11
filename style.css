@@ -12,9 +12,10 @@ body{
     flex-direction: column;
     align-items: center;
     margin: 0 auto;
-    height: 34vh;
     width: 29vw;
-    gap: 10px;
+    gap: 20px;
+    padding: 0 20px 20px;
+    box-sizing: border-box;
 }
 
 body{
@@ -24,13 +25,10 @@ body{
 }
 
 
-.container,input{
+.container{
     border: 1px solid #C4C4C4;
     border-radius: 10px;
 }
-
-
-
 
 h1{
     text-align: center;
@@ -39,14 +37,6 @@ h1{
     line-height: 30px;
 }
 
-input{
-    padding: 7px;
-    width: 25vw;
-    height: 6vh;
-    box-sizing: border-box;
-    display: block;
-    margin: 0 auto;
-}
 
 .yellow{
     background: #FFDC40;
@@ -73,6 +63,89 @@ input{
     color:white;
     font-size: 16px;
 }
+
+.icon{
+    width: 42px;
+    height: 42px;
+    background-color:#9953f1;
+    border-radius: 100%;
+    display:flex;
+    align-items: center;
+    color: white;
+    justify-content: center;
+}
+
+.filter{
+    position: relative;
+    left: 22vw;
+    padding: 10px;
+    color:#9953f1;
+}
+
+.input{
+    padding: 7px;
+    width: 25vw;
+    box-sizing: border-box;
+    border: 1px solid #ccc; 
+    border-radius: 10px;
+    padding: 5px 10px; 
+    display: flex;
+    flex-direction: column;
+    gap:15px;
+    max-height: 300px;
+    overflow-y:auto;
+    scrollbar-width: thin; 
+    scrollbar-color: rgba(61, 60, 60, 0.2) transparent; 
+}
+
+
+.input::-webkit-scrollbar {
+    width: 8px;
+}
+
+
+
+.del-button{
+    background-color: white;
+    border: 1px solid #ccc; 
+    color: #ccc;
+    cursor: pointer;
+    border-radius: 100%;
+    width: 25px;
+    height: 25px;
+    text-align: center;
+    margin-right: 20px;
+}
+
+.del-button:hover{
+    background-color:#833AE0;
+    border: none;
+    color: white;
+}
+
+input{
+    flex:1;
+    border: none;
+    outline: none;
+    padding: 5px;
+    font-size: 16px;
+}
+
+
+.input div{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    font-size: 16px;
+    justify-content: space-between;
+}
+
+.input label{
+    margin-left: 20px;
+}
+
+
+
 
 
 
