@@ -16,6 +16,7 @@ body{
     gap: 20px;
     padding: 0 20px 20px;
     box-sizing: border-box;
+    min-width: 360px;
 }
 
 body{
@@ -44,18 +45,20 @@ h1{
     width: 29vw;
     border-top-left-radius: 10px;
     border-top-right-radius: 10px;
+    min-width: 360px;
 }
 
 
 .add{
     width: 13vw;
     height: 6vh;
+    min-width: 120px;
     background: #833AE0;
     border-radius: 71px;
     border: none;
     display: flex;
     align-items: center;
-    gap:50px
+    gap:3vw;
 }
 
 
@@ -77,10 +80,11 @@ h1{
 
 .filter{
     position: relative;
-    left: 22vw;
     padding: 10px;
-    color:#9953f1;
+    left: 22vw;
 }
+
+
 
 .input{
     padding: 7px;
@@ -93,6 +97,7 @@ h1{
     flex-direction: column;
     gap:15px;
     max-height: 300px;
+    min-width: 320px;
     overflow-y:auto;
     scrollbar-width: thin; 
     scrollbar-color: rgba(61, 60, 60, 0.2) transparent; 
@@ -140,9 +145,31 @@ input{
     justify-content: space-between;
 }
 
-.input label{
-    margin-left: 20px;
+
+.photo1{
+    width: 11px;
+    margin-bottom: 15px;
+    background-size: cover;
+    background-image: url("images/filter.svg");
 }
+
+.photo1:hover{
+    background-image: url("images/filter-black.svg");
+}
+
+.photo2{
+    width: 11px;
+    margin-bottom: 15px;
+    background-size: cover;
+    background-image: url("images/filter-up.svg");
+}
+
+.photo2:hover{
+    background-image: url("images/filter-up-black.svg");
+}
+
+
+
 
 
 
