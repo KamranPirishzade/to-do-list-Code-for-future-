@@ -16,7 +16,7 @@ body{
     gap: 20px;
     padding: 0 20px 20px;
     box-sizing: border-box;
-    min-width: 360px;
+    /* min-width: 300px; */
 }
 
 body{
@@ -45,20 +45,19 @@ h1{
     width: 29vw;
     border-top-left-radius: 10px;
     border-top-right-radius: 10px;
-    min-width: 360px;
+    /* min-width: 360px; */
 }
 
 
 .add{
+    display: flex;
     width: 13vw;
     height: 6vh;
-    min-width: 120px;
     background: #833AE0;
     border-radius: 71px;
     border: none;
-    display: flex;
+    justify-content: center;
     align-items: center;
-    gap:3vw;
 }
 
 
@@ -68,6 +67,7 @@ h1{
 }
 
 .icon{
+    position: absolute;
     width: 42px;
     height: 42px;
     background-color:#9953f1;
@@ -97,11 +97,12 @@ h1{
     flex-direction: column;
     gap:15px;
     max-height: 300px;
-    min-width: 320px;
     overflow-y:auto;
     scrollbar-width: thin; 
     scrollbar-color: rgba(61, 60, 60, 0.2) transparent; 
 }
+
+
 
 
 .input::-webkit-scrollbar {
@@ -119,7 +120,7 @@ h1{
     width: 25px;
     height: 25px;
     text-align: center;
-    margin-right: 20px;
+    margin-right: 0.5vw;
 }
 
 .del-button:hover{
@@ -128,11 +129,19 @@ h1{
     color: white;
 }
 
+
+.buttons{
+    display: flex;
+    align-items: center;
+}
+
+
+
 input{
     flex:1;
     border: none;
     outline: none;
-    padding: 5px;
+    padding: 5px 0;
     font-size: 16px;
 }
 
@@ -143,6 +152,10 @@ input{
     align-items: center;
     font-size: 16px;
     justify-content: space-between;
+}
+
+.input-field{
+    display: flex;
 }
 
 
@@ -166,6 +179,66 @@ input{
 
 .photo2:hover{
     background-image: url("images/filter-up-black.svg");
+}
+
+
+@media screen and (max-width:991px ) and (min-width:600px) {
+    .container{
+        width: 50vw;
+    }
+    .yellow{
+        width: 50vw;
+    }
+    .input{
+        width: 43vw;
+    }
+    .filter{
+        left:38vw;
+    }
+    .icon{
+        width: 40px;
+        height: 40px;
+    }
+    .add{
+        width: 18vw;
+    }
+    h1{
+        font-size: 24px;
+    }
+    .input div{
+        font-size: 15px;
+    }
+}
+
+@media screen and (max-width:600px ) and (min-width:320px) {
+    .container{
+        width: 75vw;
+    }
+    .yellow{
+        width: 75vw;
+    }
+    .input{
+        width: 68vw;
+    }
+    .filter{
+        left:60vw;
+    }
+    .icon{
+        width: 38px;
+        height: 38px;
+    }
+    .add{
+        width: 32vw;
+    }
+    h1{
+        font-size: 22px;
+    }
+    .input div{
+        font-size: 14px;
+    }
+    input{
+        width: 80%;
+    }
 }
 
 
