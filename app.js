@@ -5,8 +5,17 @@ inputDelButton.addEventListener("click",()=>{
     document.querySelector(".input-field input").value=""
 })
 
+function updateLabels() {
+    const listItems = document.querySelectorAll(".list-item label");
+    listItems.forEach((label, index) => {
+        const originalText = label.textContent.replace(/^\d+\.\s*/, "");
+        label.textContent = `${index + 1}.${originalText}`;
+    });
+}
 
+document.querySelector(".input").style.display="none"
 
+let showMode=false
 
 function createInput(addedInput) {
     let newElement = document.createElement("div");
@@ -24,39 +33,35 @@ function createInput(addedInput) {
         const inputDiv = e.target.parentElement;
 
         if (inputDivs.length === 1) {
-            inputDiv.querySelector("label").textContent = "No item found";
-        } else {
-
-            inputDiv.remove();
+            document.querySelector(".input-field").style.display = "flex";
+            document.querySelector(".input").style.display="none"
+            showMode=false;
         }
+            inputDiv.remove();
+            updateLabels()
     });
+    updateLabels()
 }
 
-let showMode=false
+
 
 
 let btnAdd = document.querySelector(".add");
 btnAdd.addEventListener("click", () => {
-
+    console.log("say hello")
     const inputField = document.querySelector(".input-field input");
     const inputValue = inputField.value.trim();
 
 
 
     if (inputValue === "" && document.querySelectorAll(".list-item").length === 0) {
-        showMode=true;
-        createInput("No item found"); 
-        inputField.value = "";
-        document.querySelector(".input-field").style.display = "none";
         return;
     }
 
     if (inputValue === "") {
         showMode=true;
         document.querySelector(".input-field").style.display = "none";
-        document.querySelectorAll(".list-item").forEach(item => {
-            item.style.display = "flex";
-        });
+        document.querySelector(".input").style.display="flex"
         return;
     }
 
@@ -67,12 +72,8 @@ btnAdd.addEventListener("click", () => {
         showMode=true;
 
         document.querySelector(".input-field").style.display = "none";
-        document.querySelectorAll(".list-item").forEach(item => {
-            item.style.display = "flex";
-            if(item.querySelector("label").textContent=="No item found"){
-                item.remove()
-            }
-        });}
+        document.querySelector(".input").style.display="flex"
+        }
 }
 );
 
@@ -82,9 +83,9 @@ btnPlus.addEventListener("click", () => {
     showMode=false
     document.querySelector(".input-field input").value = ""; 
     document.querySelector(".input-field").style.display = "flex"; 
-    document.querySelectorAll(".list-item").forEach(item => {
-        item.style.display = "none";
-    });
+    // document.querySelectorAll(".list-item").forEach(item => {
+    //     item.style.display = "none";
+    // });
 });
 
 
@@ -99,8 +100,8 @@ filter.addEventListener("click", (e) => {
 
 
     listItems.sort((a, b) => {
-        const aText = a.querySelector("label").textContent;
-        const bText = b.querySelector("label").textContent;
+        const aText = a.querySelector("label").textContent.replace(/^\d+\.\s*/, '');
+        const bText = b.querySelector("label").textContent.replace(/^\d+\.\s*/, '');
         return isDescending 
             ? bText.localeCompare(aText)
             : aText.localeCompare(bText);
@@ -111,4 +112,5 @@ filter.addEventListener("click", (e) => {
     listItems.forEach(item => {
         inputContainer.appendChild(item);
     });
+    updateLabels()
 });
