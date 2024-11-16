@@ -283,6 +283,7 @@ label{
     }
     .input-field{
         width: 68vw;
+        padding-right: 5px;
     }
     .list-item label{
         max-width: 78%;
